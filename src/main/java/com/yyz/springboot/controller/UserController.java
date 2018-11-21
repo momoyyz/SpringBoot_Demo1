@@ -1,6 +1,7 @@
 package com.yyz.springboot.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,13 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class UserController {
-    @Value("${user_name}")
-    private String userName;
-    @Value("${user_pass}")
-    private String userPass;
+   @Value("${book.name}")
+    private String name;
+    @Value("${book.pass}")
+    private String pass;
     @RequestMapping("test")
     @ResponseBody
     public String test(){
-        return "hello world!---"+userName+":"+userPass;
+        return "hello world!---"+name+":"+pass;
     }
 }
